@@ -17,19 +17,9 @@
                         <li><a class="dropdown-item" href="{{ route('transportadora.index')}}">Transportadoras</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Produtos
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="">Produtos</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="">Grupos de Produtos</a></li>
-                    </ul>
-                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ route('nota.index')}}">Notas</a>
+                  </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">

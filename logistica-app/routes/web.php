@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NotaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TransportadoraController;
 use Illuminate\Container\Attributes\Auth;
@@ -35,6 +36,15 @@ Route::middleware('auth')->group(function () {
     Route::get('transportadoras/edit/{transportadora}', [TransportadoraController::class, 'edit'])->name('transportadora.edit');
     Route::put('transportadoras/update/{transportadora}', [TransportadoraController::class, 'update'])->name('transportadora.update');
     Route::any('transportadoras/delete/{transportadora}', [TransportadoraController::class, 'destroy'])->name('transportadora.destroy');
+
+    //Notas
+    Route::get('notas/', [NotaController::class, 'index'])->name('nota.index');
+    Route::get('notas/create', [NotaController::class, 'create'])->name('nota.create');
+    Route::post('notas/store', [NotaController::class, 'store'])->name('nota.store');
+    Route::get('notas/show/{nota}', [NotaController::class, 'show'])->name('nota.show');
+    Route::get('notas/edit/{nota}', [NotaController::class, 'edit'])->name('nota.edit');
+    Route::put('notas/update/{nota}', [NotaController::class, 'update'])->name('nota.update');
+    Route::any('notas/delete/{nota}', [NotaController::class, 'destroy'])->name('nota.destroy');
 
 
 });

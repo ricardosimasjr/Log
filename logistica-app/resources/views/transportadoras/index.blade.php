@@ -1,6 +1,6 @@
 @extends('layouts/base')
 @section('title')
-    Cadastro de Funcionários
+    Cadastro de Transportadoras
 @endsection
 @section('content')
     <div class="mb-4">
@@ -28,7 +28,7 @@
 
                             <div class="row">
                                 <div class="col-md-4 col-sm-12">
-                                    <label class="form-label" for="nome">Nome/Razao do Cliente</label>
+                                    <label class="form-label" for="nome">Transportadora</label>
                                     <input class="form-control" type="text" name="nome" id="nome" value="">
                                 </div>
                                 <div class="col-md-4 col-sm-12 mt-2 pt-4">
