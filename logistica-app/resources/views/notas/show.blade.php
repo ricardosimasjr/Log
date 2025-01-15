@@ -116,7 +116,8 @@
         <hr>
         <div class="row">
             <div class="mb-3 mt-3">
-                <img class="img-fluid img-thumbnail rounded mx-auto d-block" src="{{ asset("storage/canhotos/$nota->canhoto") }}" width="" alt="">
+                <img class="img-fluid img-thumbnail rounded mx-auto d-block" src="{{ asset("storage/$nota->canhoto") }}" width="" alt="">
+                {{$nota->canhoto}}
             </div>
         </div>
     </form>

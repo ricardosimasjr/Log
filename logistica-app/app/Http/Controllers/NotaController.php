@@ -212,26 +212,15 @@ class NotaController extends Controller
         // dd($nota->emissao);
 
         $file = $request->file;
-        $file->store('canhotos');
+        $caminho = $file->store('canhotos');
         $hash = $file->hashName();
+
 
         $nota->updateOrFail([
 
-            // $nota->emissao = $nota->emissao,
-            // $nota->nfe = $nota->nfe,
-            // $nota->cpfcnpj = $nota->cpfcnpj,
-            // $nota->razaosocial = $nota->razaosocial,
-            // $nota->municipio = $nota->municipio,
-            // $nota->ufcliente = $nota->ufcliente,
-            // $nota->vendedor = $nota->vendedor,
-            // $nota->representante = $nota->representante,
-            // $nota->volumes = $nota->volumes,
-            // $nota->peso = $nota->peso,
-            // $nota->vfrete = $nota->vfrete,
-            // $nota->vfretecotado = $nota->vfretecotado,
-            // $nota->previsaoentrega = $nota->previsaoentrega,
 
-            'canhoto' => $hash,
+
+            'canhoto' => $caminho,
         ]);
 
         return redirect(route('nota.index'));
