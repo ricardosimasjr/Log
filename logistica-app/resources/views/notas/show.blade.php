@@ -1,22 +1,15 @@
 @extends('layouts/base')
 
 @section('title')
-    Nova NF-e
+    Detalhes da NF-e
 @endsection
 
 @section('content')
-    <div class="row">
-        <form class="row row-cols-lg-auto g-3 align-items-center mb-4" action=""
-            method="POST">
-            @csrf
-            <div class="col-md-6">
-                <input type="text" style="background-color: bisque" class="form-control" id="nota" name="nota" placeholder="NF-e">
-            </div>
-            <div class="col-12">
-                <button type="submit" class="btn btn-success" id="search" name="search">Buscar</button>
-            </div>
-        </form>
-
+    <div class="col-12">
+        <h3>Detalhamento da Nota</h3>
+    </div>
+    <div class="col-12 text-end">
+        <a class="btn btn-success" href="{{ route('nota.index') }}">Voltar</a>
     </div>
     <hr>
 
@@ -26,81 +19,83 @@
             <div class="col-1 mb-3">
                 <label for="nfe" class="form-label">NF-e</label>
                 <input type="text" class="form-control" id="nfe" name="nfe"
-                    value="@if(isset($nota)){{$nota}}@endif" readonly>
+                    value="{{ old('nfe', $nota->nfe) }}" readonly>
             </div>
             <div class="col-2 mb-3">
                 <label for="cpfcnpj" class="form-label">Cpf/Cnpj</label>
                 <input type="text" class="form-control" id="cpfcnpj" name="cpfcnpj"
-                    value="@if(isset($cpfcnpj)){{$cpfcnpj}}@endif" readonly>
+                    value="{{ old('cpfcnpj', $nota->cpfcnpj) }}" readonly>
             </div>
             <div class="col-6 mb-3">
                 <label for="razaosocial" class="form-label">Cliente</label>
                 <input type="text" class="form-control" id="razaosocial" name="razaosocial"
-                    value="@if(isset($razaosocial)){{$razaosocial}}@endif" readonly>
+                    value="{{ old('razaosocial', $nota->razaosocial) }}" readonly>
             </div>
             <div class="col-2 mb-3">
                 <label for="municipio" class="form-label">municipio</label>
                 <input type="text" class="form-control" id="municipio" name="municipio"
-                    value="@if(isset($municipio)){{$municipio}}@endif" readonly>
+                    value="{{ old('municipio', $nota->municipio) }}" readonly>
             </div>
             <div class="col-1 mb-3">
                 <label for="ufcliente" class="form-label">UF</label>
                 <input type="text" class="form-control" id="ufcliente" name="ufcliente"
-                    value="@if(isset($uf)){{$uf}}@endif" readonly>
+                    value="{{ old('ufcliente', $nota->ufcliente) }}" readonly>
             </div>
         </div>
         <div class="row">
             <div class="col-2 mb-3">
                 <label for="emissao" class="form-label">Emissão Nota</label>
                 <input type="date" class="form-control" id="emissao" name="emissao"
-                    value="@if(isset($emissao)){{$emissao}}@endif" readonly>
+                    value="{{ old('emissao', $nota->emissao) }}" readonly>
             </div>
             <div class="col-2 mb-6">
                 <label for="vendedor" class="form-label">Vendedor</label>
                 <input type="text" class="form-control" id="vendedor" name="vendedor"
-                    value="@if(isset($vendedor)){{$vendedor}}@endif" readonly>
+                    value="{{ old('vendedor', $nota->vendedor) }}" readonly>
             </div>
             <div class="col-2 mb-6">
                 <label for="representante" class="form-label">Representante</label>
                 <input type="text" class="form-control" id="representante" name="representante"
-                    value="@if(isset($representante)){{$representante}}@endif" readonly>
+                    value="{{ old('representante', $nota->representante) }}" readonly>
             </div>
             <div class="col-2 mb-6">
                 <label for="volumes" class="form-label">Volumes</label>
                 <input type="text" class="form-control" id="volumes" name="volumes"
-                    value="@if(isset($volumes)){{$volumes}}@endif" readonly>
+                    value="{{ old('volumes', $nota->volumes) }}" readonly>
             </div>
             <div class="col-4 mb-6">
                 <label for="transportadora" class="form-label">Transportadora</label>
                 <input type="text" class="form-control" id="transportadora" name="transportadora"
-                    value="@if(isset($transportadora)){{$transportadora}}@endif" readonly>
+                    value="{{ old('transportadora', $nota->transportadora) }}" readonly>
             </div>
             <div class="col-2">
                 <label class="form-label" for="peso">Peso</label>
                 <div class="input-group">
                     <input type="text" class="form-control" id="peso" name="peso"
-                        value="@if(isset($peso)){{$peso}}@endif" readonly>
+                        value="{{ old('peso', number_format($nota->peso, 3, ',', '.')) }}" readonly>
                     <div class="input-group-text">Kg</div>
                 </div>
             </div>
             <div class="col-2 mb-6">
                 <label for="tpfrete" class="form-label">Tipo Frete</label>
                 <input type="text" class="form-control" id="tpfrete" name="tpfrete"
-                    value="@if(isset($modfrete)){{$modfrete}}@endif" readonly>
+                    value="{{ old('tpfrete', $nota->tpfrete) }}" readonly>
             </div>
             <div class="col-2">
                 <label class="form-label" for="vfrete">Valor Frete Destacado</label>
                 <div class="input-group">
                     <div class="input-group-text">R$</div>
-                    <input type="text" class="form-control" id="vfrete" name="vfrete" value="@if(isset($valorfrete)){{number_format($valorfrete, 2, ',', '.')}}@endif" readonly>
+                    <input type="text" class="form-control" id="vfrete" name="vfrete"
+                        value="{{Old('valorfrete', number_format($nota->valorfrete, 2, ',', '.')) }}"
+                        readonly>
                 </div>
             </div>
             <div class="col-2">
                 <label class="form-label" for="vfreteCotado">Frete Cotado</label>
                 <div class="input-group">
                     <div class="input-group-text">R$</div>
-                    <input type="text" style="background-color: bisque" class="form-control" id="vfreteCotado" name="vfreteCotado"
-                        onKeyPress="return(moeda(this,'.',',',event))">
+                    <input type="text" style="background-color: bisque" class="form-control" id="vfreteCotado"
+                        name="vfreteCotado" value="{{Old('vfreteCotado', number_format($nota->vfreteCotado, 2, ',', '.')) }}" readonly>
                 </div>
             </div>
             <div class="col-2">
@@ -108,17 +103,20 @@
                 <div class="input-group">
                     <div class="input-group-text">R$</div>
                     <input type="text" class="form-control" id="vnota" name="vnota"
-                        value="@if (isset($valornota)) {{ number_format($valornota, 2, ',', '.') }} @endif" readonly>
+                        value="{{Old('vnota', number_format($nota->vnota, 2, ',', '.')) }}"
+                        readonly>
                 </div>
             </div>
             <div class="col-2 mb-3">
                 <label for="prevEntrega" class="form-label">Previsão Entrega</label>
-                <input type="date" style="background-color: bisque" class="form-control" id="prevEntrega" name="prevEntrega">
+                <input type="date" style="background-color: bisque" class="form-control" id="prevEntrega"
+                    name="prevEntrega" value="{{old('prevEntrega', $nota->prevEntrega)}}">
             </div>
         </div>
+        <hr>
         <div class="row">
             <div class="mb-3 mt-3">
-                <button type="submit" class="btn btn-primary">Salvar</button>
+                <img class="img-fluid img-thumbnail rounded mx-auto d-block" src="{{ asset("storage/canhotos/$nota->canhoto") }}" width="" alt="">
             </div>
         </div>
     </form>

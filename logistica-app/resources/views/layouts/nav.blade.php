@@ -14,90 +14,16 @@
                         Cadastros
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ route('transportadora.index')}}">Transportadoras</a></li>
+                        <li><a class="dropdown-item" href="{{ route('transportadora.index') }}">Transportadoras</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ route('nota.index')}}">Notas</a>
-                  </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Cadastros
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="">Origens de NC's</a></li>
-                        <li><a class="dropdown-item" href="">Tipos de NC's</a></li>
-                        <li><a class="dropdown-item" href="">Indicações de NC's</a></li>
-                        <li><a class="dropdown-item" href="">Status de NC's</a></li>
-                        <li><a class="dropdown-item" href="">Item de NC's</a></li>
-                        <li><a class="dropdown-item" href="">Tipo de Itens de NC's</a></li>
-                        <li><a class="dropdown-item" href="">Status de SAC</a></li>
-                        <li><a class="dropdown-item" href="">Canal de SAC</a></li>
-                        <li><a class="dropdown-item" href="">Tipo de Ação SAC</a></li>
-                        <li><a class="dropdown-item" href="">Síntese de Reclamação de SAC</a></li>
-                        <li><a class="dropdown-item" href="">Máquinas</a></li>
-                        <li><a class="dropdown-item" href="">Status da OP</a></li>
-                        <li><a class="dropdown-item" href="">Tipo da OP</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="">Configurações</a></li>
-                    </ul>
+                    <a class="nav-link active" aria-current="page" href="{{ route('nota.index') }}">Notas</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Compliance
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="">Compliance</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="">Origens de NC's</a></li>
-                        <li><a class="dropdown-item" href="">Tipos de NC's</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        SAC
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="">SAC</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="">Status de SAC</a></li>
-                        <li><a class="dropdown-item" href="">Canal de SAC</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Produção
-                    </a>
-                    <ul class="dropdown-menu">
-                        <a class="nav-link active" aria-current="page" href="">Ordem de Produção</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="">Máquinas</a></li>
-                        <li><a class="dropdown-item" href="">Status da OP</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Controle de Qualidade
-                    </a>
-                    <ul class="dropdown-menu">
 
-                        <li><a class="dropdown-item" href="">Ops</a></li>
-
-                    </ul>
-                </li>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="">Ops</a></li>
+                </ul>
             </ul>
             <div class="d-flex">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">

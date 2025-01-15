@@ -39,14 +39,14 @@ Route::middleware('auth')->group(function () {
 
     //Notas
     Route::get('notas/', [NotaController::class, 'index'])->name('nota.index');
-    Route::get('notas/create', [NotaController::class, 'create'])->name('nota.create');
+    Route::any('notas/create', [NotaController::class, 'create'])->name('nota.create');
+    Route::any('notas/createrecibo/{nota}', [NotaController::class, 'create_recibo'])->name('nota.createrecibo');
     Route::post('notas/store', [NotaController::class, 'store'])->name('nota.store');
+    Route::post('notas/storerecibo/{nota}', [NotaController::class, 'store_recibo'])->name('nota.storerecibo');
     Route::get('notas/show/{nota}', [NotaController::class, 'show'])->name('nota.show');
     Route::get('notas/edit/{nota}', [NotaController::class, 'edit'])->name('nota.edit');
     Route::put('notas/update/{nota}', [NotaController::class, 'update'])->name('nota.update');
     Route::any('notas/delete/{nota}', [NotaController::class, 'destroy'])->name('nota.destroy');
-
-
 });
 
 require __DIR__.'/auth.php';
