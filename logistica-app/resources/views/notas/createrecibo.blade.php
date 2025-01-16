@@ -9,7 +9,7 @@
         @csrf
         <div class="mb-3">
             <label for="file" class="form-label">Foto do Recibo</label>
-            <input type="file" class="form-control" id="file" name="file">
+            <input type="file" class="form-control" id="file" name="file" required>
         </div>
         <div class="mb-3">
             <input type="text" class="form-control" id="nota_id" name="nota_id" value="{{$nota_id}}" hidden>
